@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0a0a0f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>MyPlayer</title>
+<link rel="icon" href="assets/icons/icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <main id="view"></main>
+  <div id="mini" class="mini hidden" data-act="openplayer">
+    <img id="mCover" class="cv" alt="">
+    <div class="meta"><b id="mTitle"></b><span id="mArtist"></span></div>
+    <button class="ib" data-act="toggle" aria-label="Reproduzir ou pausar"></button>
+    <button class="ib" data-act="next" aria-label="Próxima"></button>
+    <i id="mBar"></i>
+  </div>
+  <nav id="tabs">
+    <button data-tab="home"><span data-i="home"></span>Início</button>
+    <button data-tab="lib"><span data-i="lib"></span>Biblioteca</button>
+    <button data-tab="pls"><span data-i="pls"></span>Playlists</button>
+    <button data-tab="fav"><span data-i="heartOn"></span>Favoritos</button>
+  </nav>
+  <section id="player" class="player" aria-label="Player">
+    <div class="ph">
+      <button class="ib" data-act="closeplayer" aria-label="Fechar"></button>
+      <span class="mu">Tocando agora</span>
+      <span style="width:44px"></span>
+    </div>
+    <div class="art"><img id="pCover" alt=""></div>
+    <div class="info">
+      <div class="meta"><h2 id="pTitle"></h2><p id="pArtist"></p></div>
+      <button id="pFav" class="ib fv" data-act="fav" aria-label="Favoritar"></button>
+    </div>
+    <div class="seek">
+      <input type="range" id="pSeek" min="0" max="1000" value="0" aria-label="Progresso">
+      <div class="times"><span id="pCur">0:00</span><span id="pDur">0:00</span></div>
+    </div>
+    <div class="ctrls">
+      <button class="ib" id="bShuffle" data-act="shuffle" aria-label="Aleatório"></button>
+      <button class="ib" data-act="prev" aria-label="Anterior"></button>
+      <button class="play" data-act="toggle" aria-label="Reproduzir ou pausar"></button>
+      <button class="ib" data-act="next" aria-label="Próxima"></button>
+      <button class="ib" id="bRepeat" data-act="repeat" aria-label="Repetir"></button>
+    </div>
+    <div class="vol"><span data-i="vol"></span><input type="range" id="pVol" min="0" max="100" value="80" aria-label="Volume"></div>
+  </section>
+  <div id="sheet" class="sheet hidden"></div>
+  <div id="toast"></div>
+</div>
+<input type="file" id="file" multiple accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.oga,.flac" hidden>
+<script src="js/storage.js"></script>
+<script src="js/library.js"></script>
+<script src="js/player.js"></script>
+<script src="js/playlists.js"></script>
+<script src="js/native.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

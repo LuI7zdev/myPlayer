@@ -1,0 +1,11 @@
+{
+  "name": "MyPlayer",
+  "short_name": "MyPlayer",
+  "description": "Reprodutor musical offline",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "icons": [{ "src": "assets/icons/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }]
+}
